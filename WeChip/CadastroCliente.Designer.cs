@@ -41,8 +41,8 @@ namespace WeChip
             this.label13 = new System.Windows.Forms.Label();
             this.btnSalvarCliente = new System.Windows.Forms.Button();
             this.grdCliente = new System.Windows.Forms.DataGridView();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnFechar = new System.Windows.Forms.Button();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grdCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +83,7 @@ namespace WeChip
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(98, 20);
             this.txtCpf.TabIndex = 2;
+            this.txtCpf.Leave += new System.EventHandler(this.txtCpf_Leave);
             // 
             // label3
             // 
@@ -102,6 +103,7 @@ namespace WeChip
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(98, 20);
             this.txtTelefone.TabIndex = 3;
+            this.txtTelefone.Leave += new System.EventHandler(this.txtTelefone_Leave);
             // 
             // label4
             // 
@@ -154,10 +156,6 @@ namespace WeChip
             this.grdCliente.Size = new System.Drawing.Size(488, 150);
             this.grdCliente.TabIndex = 27;
             // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(WeChip.Cliente);
-            // 
             // btnFechar
             // 
             this.btnFechar.Location = new System.Drawing.Point(32, 398);
@@ -168,11 +166,15 @@ namespace WeChip
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(WeChip.Cliente);
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 433);
+            this.ClientSize = new System.Drawing.Size(552, 433);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.grdCliente);
             this.Controls.Add(this.btnSalvarCliente);

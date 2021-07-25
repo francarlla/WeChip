@@ -67,11 +67,12 @@ namespace WeChip
             this.panel3 = new System.Windows.Forms.Panel();
             this.gdvProdutos = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.cbbStatus = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.btnOfertar = new System.Windows.Forms.Button();
+            this.btnOfertas = new System.Windows.Forms.Button();
             this.pnlEndereco.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -138,6 +139,7 @@ namespace WeChip
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(146, 20);
             this.txtEstado.TabIndex = 27;
+            this.txtEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstado_KeyPress);
             // 
             // txtCep
             // 
@@ -479,15 +481,15 @@ namespace WeChip
             this.label16.TabIndex = 10;
             this.label16.Text = "Produtos";
             // 
-            // button1
+            // btnVoltar
             // 
-            this.button1.Location = new System.Drawing.Point(90, 671);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Voltar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnVoltar.Location = new System.Drawing.Point(174, 637);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.TabIndex = 33;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // panel4
             // 
@@ -518,7 +520,7 @@ namespace WeChip
             // 
             // btnOfertar
             // 
-            this.btnOfertar.Location = new System.Drawing.Point(12, 671);
+            this.btnOfertar.Location = new System.Drawing.Point(12, 637);
             this.btnOfertar.Name = "btnOfertar";
             this.btnOfertar.Size = new System.Drawing.Size(75, 23);
             this.btnOfertar.TabIndex = 35;
@@ -526,14 +528,25 @@ namespace WeChip
             this.btnOfertar.UseVisualStyleBackColor = true;
             this.btnOfertar.Click += new System.EventHandler(this.btnOfertar_Click);
             // 
+            // btnOfertas
+            // 
+            this.btnOfertas.Location = new System.Drawing.Point(93, 637);
+            this.btnOfertas.Name = "btnOfertas";
+            this.btnOfertas.Size = new System.Drawing.Size(75, 23);
+            this.btnOfertas.TabIndex = 36;
+            this.btnOfertas.Text = "Ver Ofertas";
+            this.btnOfertas.UseVisualStyleBackColor = true;
+            this.btnOfertas.Click += new System.EventHandler(this.btnOfertas_Click);
+            // 
             // Ofertar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 728);
+            this.Controls.Add(this.btnOfertas);
             this.Controls.Add(this.btnOfertar);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -597,10 +610,11 @@ namespace WeChip
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView gdvProdutos;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cbbStatus;
         private System.Windows.Forms.Button btnOfertar;
+        private System.Windows.Forms.Button btnOfertas;
     }
 }

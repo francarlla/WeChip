@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static WeChip.Enumerados;
-
-namespace WeChip
+﻿namespace WeChip
 {
     public class Cliente
     {
@@ -16,11 +9,11 @@ namespace WeChip
         private string telefone;
         private Enumerados.Status status;
 
+        public int Identificador { get => identificador; set => identificador = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Cpf { get => cpf; set => cpf = value; }
-        public double? Credito { get => credito; set => credito = value; }
         public string Telefone { get => telefone; set => telefone = value; }
-        public int Identificador { get => identificador; set => identificador = value; }
+        public double? Credito { get => credito; set => credito = value; }
         public Enumerados.Status Status { get => status; set => status = value; }
 
         public Cliente()

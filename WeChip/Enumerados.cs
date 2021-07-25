@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
+using System.Runtime.Serialization;
 
 namespace WeChip
 {
@@ -57,14 +57,14 @@ namespace WeChip
             SOFTWARE = 2
         }
 
-        public static string GetDescription<T>(this T e) where T : IConvertible
+        public static string ObterDescricao<T>(this T e) where T : IConvertible
         {
             if (e is Enum)
             {
                 Type type = e.GetType();
-                Array values = System.Enum.GetValues(type);
+                Array valores = System.Enum.GetValues(type);
 
-                foreach (int val in values)
+                foreach (int val in valores)
                 {
                     if (val == e.ToInt32(CultureInfo.InvariantCulture))
                     {
@@ -84,23 +84,35 @@ namespace WeChip
             return null; // could also return string.Empty
         }
 
-        public static IList EnumToList<T>()
+        public static IList EnumParaLista<T>()
         {
-            if (!typeof(T).IsEnum)
-                throw new Exception("T isn't an enumerated type");
-
-            IList list = new List<T>();
+            ArrayList lista = new ArrayList();
             Type type = typeof(T);
             if (type != null)
             {
-                Array enumValues = Enum.GetValues(type);
-                foreach (T value in enumValues)
+                Array enumValores = Enum.GetValues(type);
+                foreach (Enum valor in enumValores)
                 {
-                    list.Add(value);
+                    lista.Add(new KeyValuePair<Enum, string>(valor, ObterDescricao(valor)));
                 }
             }
 
-            return list;
+            return lista;
+        }
+
+        public static T ObterEnumPelaDescricao<T>(string descricao)
+        {
+            var type = typeof(T);
+            if (!type.IsEnum)
+                throw new ArgumentException();
+            FieldInfo[] fields = type.GetFields();
+            var field = fields
+                            .SelectMany(f => f.GetCustomAttributes(
+                                typeof(DescriptionAttribute), false), (
+                                    f, a) => new { Field = f, Att = a })
+                            .Where(a => ((DescriptionAttribute)a.Att)
+                                .Description == descricao).SingleOrDefault();
+            return field == null ? default(T) : (T)field.Field.GetRawConstantValue();
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static WeChip.Enumerados;
+﻿using System.Collections.Generic;
 
 namespace WeChip
 {
@@ -22,10 +17,11 @@ namespace WeChip
     {
         private Cliente cliente;
         private Endereco endereco_entrega;
-        private List<Produtos> produtos;
+        private List<Enumerados.Produtos> produtos;
 
         public Endereco Endereco_entrega { get => endereco_entrega; set => endereco_entrega = value; }
-        public List<Produtos> Produtos { get => produtos; set => produtos = value; }
+        public List<Enumerados.Produtos> Produtos { get => produtos; set => produtos = value; }
+        public Cliente Cliente { get => cliente; set => cliente = value; }
 
         public Oferta()
         {

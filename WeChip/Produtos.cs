@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WeChip
 {
@@ -24,6 +21,11 @@ namespace WeChip
 
         };
 
+
+        public static double RetornarValorProduto(Enumerados.Produtos produto)
+        {
+            return Convert.ToDouble(produtos[produto][0]);
+        }
 
     }
 
