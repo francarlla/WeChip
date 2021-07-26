@@ -235,7 +235,7 @@ namespace WeChip
                 txtTelefone.Text = string.Empty;
                 txtTelefone.Focus();
             }
-            
+
         }
     }
 }

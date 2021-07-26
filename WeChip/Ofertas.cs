@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static WeChip.Produtos;
 
@@ -54,7 +49,7 @@ namespace WeChip
                 linha["CPF"] = oferta.Cliente.Cpf;
                 linha["Telefone"] = oferta.Cliente.Telefone;
                 linha["Status Atual"] = oferta.Cliente.Status.ObterDescricao();
-                
+
                 string produtos = string.Empty;
                 double valorProdutos = 0;
                 foreach (var produto in oferta.Produtos)
@@ -66,7 +61,7 @@ namespace WeChip
                 linha["Crédito Anterior"] = (Convert.ToDouble(oferta.Cliente.Credito) + valorProdutos).ToString("C2");
                 linha["Crédito Disponível"] = Convert.ToDouble(oferta.Cliente.Credito).ToString("C2");
 
-                if (oferta.Endereco_entrega.rua != string.Empty && oferta.Endereco_entrega.numero != null && oferta.Endereco_entrega.bairro != string.Empty 
+                if (oferta.Endereco_entrega.rua != string.Empty && oferta.Endereco_entrega.numero != null && oferta.Endereco_entrega.bairro != string.Empty
                     && oferta.Endereco_entrega.cidade != string.Empty && oferta.Endereco_entrega.estado != string.Empty && oferta.Endereco_entrega.cep != string.Empty)
                 {
                     linha["Endereço Entrega"] = string.Format("Rua " + oferta.Endereco_entrega.rua + ", " + oferta.Endereco_entrega.numero.ToString() + oferta.Endereco_entrega.complemento + ", " + oferta.Endereco_entrega.bairro + ", " + oferta.Endereco_entrega.cidade + ", " + oferta.Endereco_entrega.estado + ", CEP " + oferta.Endereco_entrega.cep);

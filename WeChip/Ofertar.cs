@@ -301,7 +301,7 @@ namespace WeChip
         {
             if ((Enumerados.TipoProduto)Enum.Parse(typeof(Enumerados.TipoProduto), tipoProduto) == Enumerados.TipoProduto.HARDWARE)
             {
-                if (txtRua.Text == string.Empty || txtNumero.Text == string.Empty || txtBairro.Text == string.Empty 
+                if (txtRua.Text == string.Empty || txtNumero.Text == string.Empty || txtBairro.Text == string.Empty
                     || txtCidade.Text == string.Empty || txtEstado.Text == string.Empty || txtCep.Text == string.Empty)
                 {
                     MessageBox.Show("Para produtos do tipo 'HARDWARE' é necessário que todos os campos do endereço de entrega sejam preenchidos!");
