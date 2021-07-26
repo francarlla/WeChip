@@ -29,6 +29,19 @@ namespace WeChip
             base.OnLoad(e);
             CarregarComboStatus();
             CarregarProdutos();
+            txtCliente.Focus();
+        }
+
+        private int RecuperarIdenficador()
+        {
+            if (ofertas.Count == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return ofertas.Count + 1;
+            }
         }
 
         private void CarregarProdutos()
@@ -132,6 +145,7 @@ namespace WeChip
             if (cliente_selecionado != null)
             {
                 PreencherDadosCliente(cliente_selecionado);
+                txtNome.Focus();
             }
         }
 
@@ -145,6 +159,7 @@ namespace WeChip
             if (cliente_selecionado != null)
             {
                 PreencherDadosCliente(cliente_selecionado);
+                txtNome.Focus();
             }
         }
 
@@ -200,6 +215,7 @@ namespace WeChip
 
                 if (!pararExecucao && ConfirmarVenda(controleSelecaoProdutos, statusNovo, somaProdutosSelecionados))
                 {
+                    ofertaAux.Identificador = RecuperarIdenficador();
                     ofertaAux.Cliente = cliente_selecionado;
 
                     int? numero;
@@ -310,6 +326,16 @@ namespace WeChip
             this.Close();
             Ofertas ofertas_form = new Ofertas(ofertas);
             ofertas_form.Show();
+        }
+
+        private void txtCep_Leave(object sender, EventArgs e)
+        {
+            if (!txtCep.MaskCompleted)
+            {
+                MessageBox.Show("CEP inválido!");
+                txtCep.Text = string.Empty;
+                txtCep.Focus();
+            }
         }
     }
 }

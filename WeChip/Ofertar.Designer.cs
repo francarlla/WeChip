@@ -138,7 +138,7 @@ namespace WeChip
             this.txtEstado.Location = new System.Drawing.Point(497, 85);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(146, 20);
-            this.txtEstado.TabIndex = 27;
+            this.txtEstado.TabIndex = 12;
             this.txtEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstado_KeyPress);
             // 
             // txtCep
@@ -148,14 +148,15 @@ namespace WeChip
             this.txtCep.Mask = "00000-999";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(98, 20);
-            this.txtCep.TabIndex = 5;
+            this.txtCep.TabIndex = 6;
+            this.txtCep.Leave += new System.EventHandler(this.txtCep_Leave);
             // 
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(246, 82);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(196, 20);
-            this.txtCidade.TabIndex = 10;
+            this.txtCidade.TabIndex = 11;
             this.txtCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCidade_KeyPress);
             // 
             // label5
@@ -182,7 +183,7 @@ namespace WeChip
             this.txtBairro.Location = new System.Drawing.Point(55, 82);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(136, 20);
-            this.txtBairro.TabIndex = 9;
+            this.txtBairro.TabIndex = 10;
             this.txtBairro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBairro_KeyPress);
             // 
             // label7
@@ -199,7 +200,7 @@ namespace WeChip
             this.txtComplemento.Location = new System.Drawing.Point(497, 59);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(146, 20);
-            this.txtComplemento.TabIndex = 8;
+            this.txtComplemento.TabIndex = 9;
             // 
             // label8
             // 
@@ -215,7 +216,7 @@ namespace WeChip
             this.txtNumero.Location = new System.Drawing.Point(361, 59);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(50, 20);
-            this.txtNumero.TabIndex = 7;
+            this.txtNumero.TabIndex = 8;
             this.txtNumero.ValidatingType = typeof(int);
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
@@ -233,7 +234,7 @@ namespace WeChip
             this.txtRua.Location = new System.Drawing.Point(55, 59);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(247, 20);
-            this.txtRua.TabIndex = 6;
+            this.txtRua.TabIndex = 7;
             // 
             // label11
             // 
@@ -289,7 +290,7 @@ namespace WeChip
             this.txtCliente.Location = new System.Drawing.Point(64, 18);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(202, 20);
-            this.txtCliente.TabIndex = 28;
+            this.txtCliente.TabIndex = 2;
             this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             this.txtCliente.Leave += new System.EventHandler(this.txtCliente_Leave);
             // 
@@ -312,7 +313,7 @@ namespace WeChip
             this.panel1.Location = new System.Drawing.Point(12, 47);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(665, 74);
-            this.panel1.TabIndex = 30;
+            this.panel1.TabIndex = 1;
             // 
             // txtCPF
             // 
@@ -321,7 +322,7 @@ namespace WeChip
             this.txtCPF.Location = new System.Drawing.Point(64, 42);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(108, 20);
-            this.txtCPF.TabIndex = 31;
+            this.txtCPF.TabIndex = 3;
             this.txtCPF.TextChanged += new System.EventHandler(this.txtCPF_TextChanged);
             this.txtCPF.Leave += new System.EventHandler(this.txtCPF_Leave);
             // 
@@ -350,7 +351,7 @@ namespace WeChip
             this.panel2.Location = new System.Drawing.Point(12, 127);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(665, 106);
-            this.panel2.TabIndex = 31;
+            this.panel2.TabIndex = 4;
             // 
             // txtTelefone
             // 
@@ -459,7 +460,7 @@ namespace WeChip
             this.panel3.Location = new System.Drawing.Point(12, 364);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(665, 185);
-            this.panel3.TabIndex = 32;
+            this.panel3.TabIndex = 13;
             // 
             // gdvProdutos
             // 
@@ -469,7 +470,7 @@ namespace WeChip
             this.gdvProdutos.Location = new System.Drawing.Point(15, 16);
             this.gdvProdutos.Name = "gdvProdutos";
             this.gdvProdutos.Size = new System.Drawing.Size(636, 150);
-            this.gdvProdutos.TabIndex = 11;
+            this.gdvProdutos.TabIndex = 14;
             // 
             // label16
             // 
@@ -486,7 +487,7 @@ namespace WeChip
             this.btnVoltar.Location = new System.Drawing.Point(174, 637);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
-            this.btnVoltar.TabIndex = 33;
+            this.btnVoltar.TabIndex = 19;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -498,7 +499,7 @@ namespace WeChip
             this.panel4.Location = new System.Drawing.Point(12, 555);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(665, 49);
-            this.panel4.TabIndex = 34;
+            this.panel4.TabIndex = 15;
             // 
             // cbbStatus
             // 
@@ -506,7 +507,7 @@ namespace WeChip
             this.cbbStatus.Location = new System.Drawing.Point(15, 16);
             this.cbbStatus.Name = "cbbStatus";
             this.cbbStatus.Size = new System.Drawing.Size(193, 21);
-            this.cbbStatus.TabIndex = 12;
+            this.cbbStatus.TabIndex = 16;
             // 
             // label20
             // 
@@ -523,7 +524,7 @@ namespace WeChip
             this.btnOfertar.Location = new System.Drawing.Point(12, 637);
             this.btnOfertar.Name = "btnOfertar";
             this.btnOfertar.Size = new System.Drawing.Size(75, 23);
-            this.btnOfertar.TabIndex = 35;
+            this.btnOfertar.TabIndex = 17;
             this.btnOfertar.Text = "Ofertar";
             this.btnOfertar.UseVisualStyleBackColor = true;
             this.btnOfertar.Click += new System.EventHandler(this.btnOfertar_Click);
@@ -533,7 +534,7 @@ namespace WeChip
             this.btnOfertas.Location = new System.Drawing.Point(93, 637);
             this.btnOfertas.Name = "btnOfertas";
             this.btnOfertas.Size = new System.Drawing.Size(75, 23);
-            this.btnOfertas.TabIndex = 36;
+            this.btnOfertas.TabIndex = 18;
             this.btnOfertas.Text = "Ver Ofertas";
             this.btnOfertas.UseVisualStyleBackColor = true;
             this.btnOfertas.Click += new System.EventHandler(this.btnOfertas_Click);

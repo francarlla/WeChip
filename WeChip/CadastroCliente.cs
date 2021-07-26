@@ -9,7 +9,7 @@ namespace WeChip
     public partial class CadastroCliente : Form
     {
         public List<Cliente> clientes;
-        int identificador = 1;
+
         public CadastroCliente()
         {
             InitializeComponent();
@@ -29,6 +29,17 @@ namespace WeChip
             PreencherClientesCadastrados();
         }
 
+        private int RecuperarIdentificador()
+        {
+            if (clientes.Count == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return clientes.Count + 1;
+            }
+        }
         private void PreencherClientesCadastrados()
         {
             DataTable clientesCadastrados = new DataTable();
@@ -60,7 +71,7 @@ namespace WeChip
             {
 
                 Cliente clienteAux = new Cliente();
-                clienteAux.Identificador = identificador;
+                clienteAux.Identificador = RecuperarIdentificador();
                 clienteAux.Status = Enumerados.Status.NomeLivre;
                 clienteAux.Nome = txtNome.Text;
                 clienteAux.Cpf = txtCpf.Text;
@@ -77,7 +88,6 @@ namespace WeChip
 
                 clientes.Add(clienteAux);
                 LimparForm();
-                identificador++;
                 PreencherClientesCadastrados();
             }
 

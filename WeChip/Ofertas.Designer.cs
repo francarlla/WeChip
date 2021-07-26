@@ -31,6 +31,7 @@ namespace WeChip
         {
             this.dgvOfertasCadastradas = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOfertasCadastradas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,11 +53,22 @@ namespace WeChip
             this.label1.TabIndex = 1;
             this.label1.Text = "Ofertas Cadastradas";
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Location = new System.Drawing.Point(16, 430);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.TabIndex = 2;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
             // Ofertas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 470);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvOfertasCadastradas);
             this.Name = "Ofertas";
@@ -71,5 +83,6 @@ namespace WeChip
 
         private System.Windows.Forms.DataGridView dgvOfertasCadastradas;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

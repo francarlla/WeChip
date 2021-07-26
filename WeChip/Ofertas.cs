@@ -35,6 +35,7 @@ namespace WeChip
         private void CarregarOfertas()
         {
             DataTable ofertasCadastradas = new DataTable();
+            ofertasCadastradas.Columns.Add("Identificador", typeof(int));
             ofertasCadastradas.Columns.Add("Nome Cliente", typeof(string));
             ofertasCadastradas.Columns.Add("CPF", typeof(string));
             ofertasCadastradas.Columns.Add("Telefone", typeof(string));
@@ -48,6 +49,7 @@ namespace WeChip
             foreach (var oferta in ofertas)
             {
                 DataRow linha = ofertasCadastradas.NewRow();
+                linha["Identificador"] = oferta.Identificador;
                 linha["Nome Cliente"] = oferta.Cliente.Nome;
                 linha["CPF"] = oferta.Cliente.Cpf;
                 linha["Telefone"] = oferta.Cliente.Telefone;
@@ -78,5 +80,9 @@ namespace WeChip
             dgvOfertasCadastradas.DataSource = ofertasCadastradas;
         }
 
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
